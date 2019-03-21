@@ -11,7 +11,11 @@ public class Pro1 {
 	public double result_len;
 	public void processCommand(int i) {
 		ReadData("input" + i + ".txt");
-		result_len = 1231231;
+		double tmp=0;
+		for(int t=0; t<n-1; t++)
+			tmp += calclen(arr[t].x,arr[t+1].x,arr[t].y,arr[t+1].y);
+		tmp += calclen(arr[0].x,arr[n-1].x,arr[0].y,arr[n-1].y);
+		result_len = tmp;
 		tour(1 , 0);
 
 		Sequence();
